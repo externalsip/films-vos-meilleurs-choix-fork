@@ -1,0 +1,20 @@
+@use 'variables' as v;
+@use 'mixins/text' as txt;
+@use "sass:color";
+
+.card{
+    background-color: v.$primary;;
+    margin:5px;
+    padding:5px;
+    &__btn{
+        padding: 5px 0;
+        width:100%;
+        background-color: color.adjust(v.$primary, $lightness: 15%);
+        color: color.complement(v.$primary);
+        @include txt.small-cap;
+        border:none;
+        &:hover{
+            background-color: color.adjust(v.$primary, $lightness: 25%);
+        }
+    }
+}
